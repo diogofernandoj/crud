@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>CRUD</title>
+</head>
+<body>
+    <header><h1 id="title-header">Área de funcionários</h1></header>
+    <main>
+        <div class="container">
+            <button type="button" id="new-employee-btn" onclick="openModal()"><i class="fa-solid fa-user-plus"></i> Cadastrar</button>
+            <table id="table-employees">
+                <thead>
+                    <th>Nome</th>
+                    <th>Função</th>
+                    <th>Salário</th>
+                    <th>Ação</th>
+                </thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <div class="modal-container">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="title-modal">Cadastrar funcionário</div>
+                <i id="close-modal-btn" class="fa-solid fa-xmark" onclick="closeModal()"></i>
+            </div>
+            <form autocomplete="off">
+                
+                <label for="m-name"></label>
+                <input type="text" id="m-name" placeholder="Nome" required>
+
+                <label for="m-function"></label>
+                <input type="text" id="m-function" placeholder="Função" required>
+
+                <label for="m-salary"></label>
+                <input type="number" id="m-salary" placeholder="Salário" required>
+
+                <button type="submit" id="save-btn">Salvar</button>
+
+            </form>
+        </div>
+    </div>
+    <footer>Copyright - Diogo Jorge</footer>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/d46c525ea6.js" crossorigin="anonymous"></script>
+    <!-- My JS File -->
+    <script src="scripts.js"></script>
+</body>
+</html>

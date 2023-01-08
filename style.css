@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap');
+
+* {
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --defaultColor: #cc092f;
+}
+
+body {
+    min-height: 100vh; width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: var(--defaultColor);
+    color: #fff;
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+    box-shadow: 0 .2rem .4rem #0006;
+}
+main {
+    flex-grow: 1;
+    margin: 4vh auto 1vh auto;
+    width: 90%;
+    height: calc(100vh - 10rem);
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    border-radius: .4rem;
+    box-shadow: .1rem .1rem .6rem #0004;
+    background-color: #fff;
+    padding: 1rem;
+    overflow: auto;
+}
+.container::-webkit-scrollbar {
+    width: 12px;
+    background-color: #eee;
+}
+  
+.container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--defaultColor);
+}
+
+#new-employee-btn {
+    border: none;
+    background: var(--defaultColor);
+    color: #fff;
+    font-weight: 700;
+    padding: .3rem 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+button:hover {
+    opacity: .9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+thead {
+    background-color: #f5f5f5;
+    color: var(--defaultColor);
+    line-height: 3rem;
+}
+tbody tr {
+    border-bottom: 2px solid #ddd;
+    line-height: 4rem;
+    color: #777;
+    font-weight: 500;
+}
+tbody tr td, thead th {
+    padding-left: 1rem;
+    text-align: start;
+}
+tbody tr td:nth-child(4), thead th:nth-child(4) {
+    text-align: center;
+}
+tbody i {
+    color: #aaa;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: .3rem .4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+tbody i:hover {
+    background-color: var(--defaultColor);
+    color: #fff;
+    border: 1px solid var(--defaultColor);
+}
+
+/* Modal */
+.modal-container {
+    display: none;
+}
+.modal-container.active {
+    position: fixed;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    background-color: #bbb6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    background-color: #fff;
+    box-shadow: .2rem .2rem .8rem #0006;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 60%;
+    max-width: 500px;
+    height: max-content;
+}
+.modal-container.active .modal {
+    animation: modal .3s;
+}
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate(0, -50px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title-modal {
+    color: var(--defaultColor);
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.fa-xmark {
+    color: #aaa;
+    background-color: #eee;
+    padding: .2rem .4rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+.fa-xmark:hover {
+    background-color: var(--defaultColor);
+    color: #fff;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    margin-top: 1rem;
+}
+.modal form input {
+    font-weight: 500;
+    border: none;
+    padding: .2rem;
+    border-radius: 0 0 0 .4rem;
+    border-bottom: 1px solid var(--defaultColor);
+    transition: .2s ease-in-out;
+}
+.modal form input:focus {
+    outline: none;
+}
+.modal #save-btn {
+    border: none;
+    background-color: var(--defaultColor);
+    color: #fff;
+    font-weight: 500;
+    border-radius: 1rem;
+    padding: .2rem 0;
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+footer {
+    color: #aaa;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        background-color: var(--defaultColor);
+        color: #fff;
+        text-align: center;
+        height: 3rem;
+        line-height: 3rem;
+        font-size: .7rem;
+        box-shadow: 0 .2rem .4rem #0006;
+    }
+    main {
+        flex-grow: 1;
+        margin: 0;
+        width: 100%;
+        min-height: 70vh;
+    }
+    .container {
+        box-shadow: .1rem .1rem .6rem #0004;
+        background-color: #fff;
+        padding:  0 .5rem;
+    }
+    #new-employee-btn {
+        margin-top: 1rem;
+        font-size: .6rem;
+    }
+    tbody tr td, thead th, tbody i {
+        font-size: .6rem;
+    }
+    .fa-xmark, .title-modal {
+        font-size: .7rem;
+    }
+    .modal form input, .modal #save-btn {
+        font-size: .6rem;
+    }
+    footer {
+        font-size: .8rem;
+        background-color: var(--defaultColor);
+        color: #fff;
+        box-shadow: .2rem -.2rem .8rem #0006;
+    }
+}
