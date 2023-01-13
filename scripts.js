@@ -87,7 +87,7 @@ function loaditems() {
 
 }
 
-const getItemsDB = () => JSON.parse(localStorage.getItem('dbEmployees')) ?? []
+const getItemsDB = () => JSON.parse(localStorage.getItem('dbEmployees')) ?? [{'name': 'Diogo Jorge', 'function': 'Desenvolvedor', 'salary': 1000}]
 const setItemsDB = () => localStorage.setItem('dbEmployees', JSON.stringify(items))
 
 loaditems()
